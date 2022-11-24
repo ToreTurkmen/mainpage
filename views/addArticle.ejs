@@ -1,0 +1,25 @@
+<%- include('./components/header') %> 
+ 
+<form action="/add-article" method="POST">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Title</label>
+    <input type="text" name="title" class="form-control" placeholder="title" >
+    <% if (err && err.title) { %>
+      <div id="emailHelp" class="form-text">
+       <%= err['title'].message %> </div>
+      <% } %> 
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Article</label>
+    <input type="text" name="article" class="form-control" placeholder="article"  >
+    <% if (err && err.article) { %>
+      <div id="emailHelp" class="form-text">
+       <%= err['article'].message %> </div>
+    <% } %>
+  </div>
+  
+  <button type="submit" class="btn btn-primary" aria-placeholder="submit">Submit</button>
+</form>
+
+<%- include('./components/footer') %>  

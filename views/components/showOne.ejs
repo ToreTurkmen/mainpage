@@ -1,0 +1,21 @@
+<%- include('./components/header') %> 
+ 
+
+<% if (result) { %>
+
+  
+    <div class="card mt-4">
+      <div class="card-body">
+          <h5 class="card-title"> <%= result.title %> </h5>
+          <p class="card-text mb-2"> <%= result.article %> </p>
+          
+       </div>
+       
+  </div>
+  
+
+
+<% } else { %>
+  there is no record
+
+<% } %>

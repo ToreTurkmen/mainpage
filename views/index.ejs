@@ -1,0 +1,21 @@
+<%- include('./components/header') %>
+
+
+
+<% if (result.length> 0 ) {%>
+  <% result.forEach(element=> { %>
+      <div class="card mt-4">
+          <div class="card-body">
+              <h5 class="card-title"><%= element.title %></h5>
+              <p class="card-text mb-2"><%= element.article %></p>
+              <p><%= element.createdAt.toLocaleDateString() %></p>
+              <a href=/article/<%= element._id%> id="more">See More</a>
+              
+           </div>
+           
+      </div>
+  <% }); %>
+      <% } else { %>
+          there is no feeds adding yet....
+<% } %>
+<%- include('./components/footer') %>
